@@ -3,13 +3,15 @@ import java.util.ArrayList;
 import java.util.List;
 class Reservation {
     private int id;
-    private String name;
+    private String Firstname;
+    private String Lastname;
     private String date;
     private int numberOfGuests;
 
-    public Reservation(int id, String name, String date, int numberOfGuests) {
+    public Reservation(int id, String Firstname,String Lastname, String date, int numberOfGuests) {
         this.id = id;
-        this.name = name;
+        this.Firstname = Firstname;
+        this.Lasttname = Lastname;
         this.date = date;
         this.numberOfGuests = numberOfGuests;
     }
@@ -18,8 +20,11 @@ class Reservation {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return Firstname;
+    }
+    public String getLastName() {
+        return Lastname;
     }
 
     public String getDate() {
@@ -36,7 +41,7 @@ class Reservation {
     private List<Reservation> reservations = new ArrayList<>();
     private int nextId = 1;
 
-    public Reservation makeReservation(String name, String date, int numberOfGuests) {
+    public Reservation makeReservation(String Firstname,String Lastname, String date, int numberOfGuests) {
         Reservation reservation = new Reservation(nextId++, name, date, numberOfGuests);
         reservations.add(reservation);
         return reservation;
